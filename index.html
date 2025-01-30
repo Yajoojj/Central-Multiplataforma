@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Multi-Plataformas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body class="default">
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Centro de Multi-Plataformas</h1>
+            <nav class="nav">
+                <a href="#calculator" class="nav-link"><i class="fas fa-calculator"></i> Calculadora</a>
+                <a href="#todo" class="nav-link"><i class="fas fa-tasks"></i> Tarefas</a>
+                <a href="#memory" class="nav-link"><i class="fas fa-brain"></i> Memória</a>
+                <a href="#about" class="nav-link"><i class="fas fa-user"></i> Sobre</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Seção Tarefas -->
+        <section id="todo" class="section">
+            <div class="todo-wrapper">
+                <h2><i class="fas fa-tasks"></i> Lista de Tarefas</h2>
+                
+                <div class="todo-container">
+                    <div class="todo-header">
+                        <input type="text" id="taskInput" placeholder="Nova tarefa..." class="task-input">
+                        <button class="btn add-btn" id="addTaskBtn">
+                            <i class="fas fa-plus"></i> Adicionar
+                        </button>
+                    </div>
+        
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="all">Todas</button>
+                        <button class="filter-btn" data-filter="active">Ativas</button>
+                        <button class="filter-btn" data-filter="completed">Completas</button>
+                    </div>
+        
+                    <ul class="task-list" id="taskList"></ul>
+        
+                    <div class="todo-footer">
+                        <span id="taskCounter">0 tarefas restantes</span>
+                        <button class="btn clear-btn" id="clearCompletedBtn">
+                            <i class="fas fa-trash"></i> Limpar completas
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Seção Jogo da Memória -->
+<section id="memory" class="section">
+    <div class="memory-wrapper">
+        <h2><i class="fas fa-brain"></i> Jogo da Memória</h2>
+        
+        <div class="memory-header">
+            <div class="stats">
+                <span><i class="fas fa-clock"></i> Tempo: <span id="timer">0</span>s</span>
+                <span><i class="fas fa-sync-alt"></i> Movimentos: <span id="moves">0</span></span>
+            </div>
+            <button class="btn restart-btn" onclick="restartGame()">
+                <i class="fas fa-redo"></i> Reiniciar
+            </button>
+        </div>
+
+        <div class="memory-grid" id="memoryGrid"></div>
+
+        <div class="victory-message" id="victoryMessage">
+            <h3>Parabéns! 🎉</h3>
+            <p>Você completou o jogo em <span id="finalTime">0</span> segundos<br>
+            com <span id="finalMoves">0</span> movimentos!</p>
+            <button class="btn play-again-btn" onclick="restartGame()">
+                Jogar Novamente
+            </button>
+        </div>
+    </div>
+</section>
+        <!-- Seção da Calculadora -->
+        <section id="calculator" class="section active">
+            <div class="calculator-wrapper">
+                <div class="calculator-header">
+                    <h2>Super Calculadora Científica</h2>
+                    <div class="theme-picker">
+                        <button data-theme="default" class="theme-btn" title="Tema Claro">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                        <button data-theme="dark" class="theme-btn" title="Tema Escuro">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                        <button data-theme="ocean" class="theme-btn" title="Tema Oceano">
+                            <i class="fas fa-water"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="calculator">
+                    <div class="display">
+                        <div class="history" id="history"></div>
+                        <div class="current" id="display">0</div>
+                    </div>
+
+                    <div class="buttons">
+                        <!-- Primeira Linha - Funções Especiais -->
+                        <button class="btn func" onclick="addOperation('√(')"><i class="fas fa-square-root-alt"></i></button>
+                        <button class="btn func" onclick="addOperation('^')">x<sup>y</sup></button>
+                        <button class="btn func" onclick="addOperation('π')">π</button>
+                        <button class="btn func" onclick="addOperation('sin(')">sin</button>
+                        
+                        <!-- Segunda Linha -->
+                        <button class="btn func" onclick="addOperation('cos(')">cos</button>
+                        <button class="btn func" onclick="addOperation('tan(')">tan</button>
+                        <button class="btn func" onclick="addOperation('log(')">log</button>
+                        <button class="btn func" onclick="addOperation('ln(')">ln</button>
+
+                        <!-- Números e Operadores Básicos -->
+                        <button class="btn" onclick="addNumber(7)">7</button>
+                        <button class="btn" onclick="addNumber(8)">8</button>
+                        <button class="btn" onclick="addNumber(9)">9</button>
+                        <button class="btn func" onclick="addOperation('/')">÷</button>
+                        
+                        <button class="btn" onclick="addNumber(4)">4</button>
+                        <button class="btn" onclick="addNumber(5)">5</button>
+                        <button class="btn" onclick="addNumber(6)">6</button>
+                        <button class="btn func" onclick="addOperation('*')">×</button>
+                        
+                        <button class="btn" onclick="addNumber(1)">1</button>
+                        <button class="btn" onclick="addNumber(2)">2</button>
+                        <button class="btn" onclick="addNumber(3)">3</button>
+                        <button class="btn func" onclick="addOperation('-')">−</button>
+                        
+                        <button class="btn" onclick="addDecimal()">.</button>
+                        <button class="btn" onclick="addNumber(0)">0</button>
+                        <button class="btn func" onclick="clearDisplay()">C</button>
+                        <button class="btn func" onclick="addOperation('+')">+</button>
+
+                        <!-- Linha Final -->
+                        <button class="btn equals" onclick="calculate()" style="grid-column: span 2;">=</button>
+                        <button class="btn func" onclick="addOperation('(')">(</button>
+                        <button class="btn func" onclick="addOperation(')')">)</button>
+                    </div>
+
+                    <div class="converter">
+    <h3><i class="fas fa-exchange-alt"></i> Conversor</h3>
+    <div class="converter-inputs">
+        <input type="number" id="converterInput" placeholder="Valor" step="any" class="converter-input">
+        <select id="converterType" class="converter-select">
+            <option value="celsiusToFahrenheit">°C → °F</option>
+            <option value="fahrenheitToCelsius">°F → °C</option>
+            <option value="kmToMiles">Km → Milhas</option>
+            <option value="milesToKm">Milhas → Km</option>
+            <option value="kgToPounds">Kg → Libras</option>
+            <option value="poundsToKg">Libras → Kg</option>
+        </select>
+        <button class="btn convert-btn" id="convertButton">
+            <i class="fas fa-sync-alt"></i> Converter
+        </button>
+    </div>
+    <div id="conversionResult" class="conversion-result"></div>
+</div>
+                </div>
+            </div>
+        </section>
+
+         
+
+
+ 
+        <section id="about" class="section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre o Desenvolvedor</h2>
+                    <p>Yago Uran Kurashiki Rios <br>Desenvolvedor Jr Full Stack com foco em soluções criativas e interativas. Especialista em:</p>
+                    <ul class="skills-list">
+                        <li><i class="fab fa-js"></i> JavaScript ES6+</li>
+                        <li><i class="fab fa-react"></i> React & Node.js</li>
+                        <li><i class="fas fa-database"></i> Bancos de Dados</li>
+                        <li><i class="fas fa-mobile-alt"></i> Design Responsivo</li>
+                    </ul>
+                </div>         
+        </section>
+
+        
+    </main>
+    <script src="calculator.js"></script>
+    <script src="todo.js"></script>
+    <script src="theme.js"></script>
+    <script src="memory.js"></script>
+</body>
+</html>
