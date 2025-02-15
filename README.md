@@ -18,3 +18,6 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - **React.js**: Biblioteca JavaScript para construção de interfaces de usuário.
 - **Node.js**: Ambiente de execução para o JavaScript no servidor.
 
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/yajoojj/Central-Multiplataforma.git
