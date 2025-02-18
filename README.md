@@ -15,8 +15,6 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - **HTML5**: Estruturação do conteúdo.
 - **CSS3**: Estilização e design responsivo.
 - **JavaScript ES6+**: Funcionalidades dinâmicas e interatividade.
-- **React.js**: Biblioteca JavaScript para construção de interfaces de usuário.
-- **Node.js**: Ambiente de execução para o JavaScript no servidor.
 
 1. **Clone o repositório**:
    ```bash
