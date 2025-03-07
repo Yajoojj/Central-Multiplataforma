@@ -1,21 +1,50 @@
-# Central Multiplataforma
+# 🌐 Central Multiplataforma
 
-Bem-vindo ao **Central Multiplataforma**! Este projeto reúne diversas ferramentas úteis em uma única plataforma web, incluindo uma calculadora científica, uma lista de tarefas e um jogo da memória.
+Este é um projeto web que integra múltiplas funcionalidades em uma única plataforma, incluindo uma calculadora, um gerenciador de tarefas e um sistema de memória de dados.
 
-## Funcionalidades
+## 🚀 Funcionalidades
 
-- **Calculadora Científica**: Realize cálculos avançados com funções como exponenciação, logaritmos e trigonometria.
-- **Lista de Tarefas**: Organize suas atividades diárias, adicionando, marcando como completas e removendo tarefas conforme necessário.
-- **Jogo da Memória**: Teste e melhore sua memória com um jogo interativo e desafiador.
+- 📊 **Calculadora** – Realiza operações matemáticas básicas.  
+- ✅ **Gerenciador de Tarefas (To-Do List)** – Permite adicionar, remover e marcar tarefas como concluídas.  
+- 💾 **Memória de Dados** – Armazena informações de forma persistente no navegador.  
+- 🎨 **Modo de Tema** – Alterna entre modo claro e escuro.  
 
-## Tecnologias Utilizadas
+## 📂 Estrutura do Projeto
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias:
+Central-Multiplataforma/  
+├── index.html   # Página principal do projeto  
+├── style.css    # Estilos visuais do projeto  
+├── calculator.js  # Lógica da calculadora  
+├── todo.js      # Gerenciamento da lista de tarefas  
+├── memory.js    # Armazenamento de dados  
+├── theme.js     # Alternância de temas  
+├── LICENSE      # Licença do projeto  
+├── README.md    # Documentação do projeto
 
-- **HTML5**: Estruturação do conteúdo.
-- **CSS3**: Estilização e design responsivo.
-- **JavaScript ES6+**: Funcionalidades dinâmicas e interatividade.
 
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/yajoojj/Central-Multiplataforma.git
+## 💻 Como Executar
+
+1. Clone este repositório:  
+   ```sh
+   git clone https://github.com/seu-usuario/Central-Multiplataforma.git
+
+2. Acesse a pasta do projeto:
+
+cd Central-Multiplataforma
+
+3. Abra o arquivo index.html em um navegador.
+   
+
+## 🛠 Tecnologias Utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+- WebStorm
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT - sinta-se à vontade para modificá-lo e usá-lo da maneira que desejar.
+
+---
+Desenvolvido com ❤️ e JavaScript + HTML!
